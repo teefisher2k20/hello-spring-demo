@@ -32,4 +32,10 @@ public class HelloController {
         return "Hello, " + name + "!";
     }
 
+    //handles request of  the for /hello/LaunchCode
+    @GetMapping("hello/{name}")
+    @ResponseBody
+    public String helloWithPathParam(@PathVariable String name){
+        return "Hello," + name + "!";
+    }
 }
