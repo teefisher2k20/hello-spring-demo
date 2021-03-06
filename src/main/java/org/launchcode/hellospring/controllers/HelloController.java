@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Created by Chris Bay
  */
-@Controller
 @ResponseBody
+@Controller
 @RequestMapping("hello")
 public class HelloController {
 
@@ -18,14 +18,15 @@ public class HelloController {
 //        return "Hello, Spring!";
 //    }
 
-    // lives at /hello/goodbye
+    //lives at hello/goodbye
     @GetMapping("goodbye")
     public String goodbye() {
         return "Goodbye, Spring!";
     }
 
+
     // Handles requests of the form /hello?name=LaunchCode
-    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(method = {RequestMethod.GET, RequestMethod.POST}, value = "hello")
     public String helloWithQueryParam(@RequestParam String name) {
         return "Hello, " + name + "!";
     }
@@ -36,12 +37,12 @@ public class HelloController {
         return "Hello, " + name + "!";
     }
 
-    // /hello/form
+    //lives at hello/form
     @GetMapping("form")
     public String helloForm() {
         return "<html>" +
                 "<body>" +
-                "<form action = '/hello' method = 'post'>" + // submit a request to /hello
+                "<form action = 'hello' method = 'post'>" + // submit a request to /hello
                 "<input type = 'text' name = 'name' >" +
                 "<input type = 'submit' value = 'Greet Me!' >" +
                 "</form>" +
