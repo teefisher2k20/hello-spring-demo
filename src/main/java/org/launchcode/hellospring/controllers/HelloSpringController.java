@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloController {
+public class HelloSpringController {
 
     // handles request at path /hello
     @GetMapping("hello")
@@ -20,4 +20,6 @@ public class HelloController {
     public String goodbye() {
         return "Goodbye Spring";
     }
+
+
 }
